@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Webpage Layout</title>
+
+
+        <style>
+
+                    /* Сброс стилей для устранения отступов и обводок */
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Управляет расчетом ширины и высоты элементов */
+    }
+
+                    /* Общие стили для тела страницы */
+    body {
+            display: flex; /* Устанавливает общий тип раскладки */
+            flex-direction: column; /* Вертикальное расположение элементов */
+            font-family: Arial, sans-serif; /* Шрифт для текста */
+            align-items: center; /* Центрирует содержимое */
+        }
+
+                /* Контейнер всей страницы для ограничения ширины */
+    .page-container {
+            width: 100%; /* Занимает всю доступную ширину */
+            max-width: 1200px; /* Максимальная ширина страницы */
+        }
+
+                    /* Шапка сайта */
+    .header {
+            display: flex; /* Горизонтальное выравнивание элементов */
+            align-items: center; /* Центрирование по вертикали */
+            justify-content: space-between; /* Пространство между элементами */
+            background-color: #f4f4f4; /* Фон шапки */
+            padding: 10px; /* Внутренние отступы */
+            height: 100px; /* Высота шапки */
+        }
+
+            /* Логотип в шапке */
+    .header img.logo {
+            height: 100%; /* Высота логотипа подгоняется под шапку */
+        }
+
+                        /* Текстовый блок в шапке */
+    .header .text {
+            flex-grow: 1; /* Растягивается для заполнения пространства */
+            text-align: center; /* Центрирование текста */
+            font-size: 1.5rem; /* Размер текста */
+        }
+
+            /* Контактный блок в шапке */
+    .header .contact {
+            text-align: right; /* Выравнивание текста справа */
+            font-size: 1rem; /* Размер текста */
+        }
+
+                    /* Контейнер для колонок */
+    .columns-container {
+            display: flex; /* Горизонтальное расположение колонок */
+            flex-direction: row; /* Направление по умолчанию */
+            flex-grow: 1; /* Занимает оставшееся пространство */
+            }
+
+            /* Левая и правая колонки */
+            .left-column, .right-column {
+                width: 200px; /* Ширина колонок */
+                background-color: #e8e8e8; /* Фон колонок */
+                padding: 10px; /* Внутренние отступы */
+            }
+
+            /* Основной контент */
+            .main-content {
+                flex-grow: 1; /* Растягивается на оставшееся пространство */
+                background-color: #ffffff; /* Фон основного контента */
+                padding: 10px; /* Внутренние отступы */
+            }
+
+            /* Нижний подвал страницы */
+            .footer {
+                background-color: #d4d4d4; /* Фон подвала */
+                text-align: center; /* Центрирование текста */
+                padding: 10px; /* Внутренние отступы */
+                height: 50px; /* Высота подвала */
+            }
+
+            /* Адаптивный дизайн для экранов шириной до 768px */
+            @media (max-width: 768px) {
+                .header {
+                    flex-direction: column; /* Вертикальное расположение элементов в шапке */
+                    align-items: flex-start; /* Выравнивание по левому краю */
+                    height: auto; /* Высота автоматически подстраивается */
+                }
+
+                .header .text {
+                    text-align: left; /* Выравнивание текста по левому краю */
+                    font-size: 1.2rem; /* Уменьшенный размер текста */
+                    margin-top: 10px; /* Отступ сверху */
+                }
+
+                .header .contact {
+                    text-align: left; /* Выравнивание текста по левому краю */
+                    font-size: 0.9rem; /* Уменьшенный размер текста */
+                    margin-top: 10px; /* Отступ сверху */
+                }
+
+                .columns-container {
+                    flex-direction: column; /* Вертикальное расположение колонок */
+                }
+
+                .left-column, .right-column {
+                    width: 100%; /* Колонки занимают всю ширину */
+                    margin-bottom: 10px; /* Отступ снизу между колонками */
+                }
+
+                .footer {
+                    height: auto; /* Высота подстраивается автоматически */
+                    padding: 20px; /* Увеличенные отступы */
+                }
+            }
+        </style>
+
+    </head>
+    <body>
+        <div class="page-container">
+            <div class="header">
+                <img src="path-to-your-logo.jpg" alt="Logo" class="logo">
+                <div class="text">Заголовок сайта</div>
+                <div class="contact">
+                    <img src="path-to-contact-image.jpg" alt="Contact Icon" style="height: 30px;">
+                    <p>+123 456 789</p>
+                </div>
+            </div>
+
+            <div class="columns-container">
+                <div class="left-column">
+                    Левый столбец
+                </div>
+                <div class="main-content">
+                    Основной контент
+                </div>
+                <div class="right-column">
+                    Правый столбец
+                </div>
+            </div>
+
+            <div class="footer">
+                Нижний подвал
+            </div>
+            </div>
+
+    </body>
+</html>
+
